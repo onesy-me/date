@@ -848,7 +848,9 @@ group('@amaui/date', () => {
       const valueNode = format(am, `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`);
       const values = [valueNode, ...valueBrowsers];
 
-      values.forEach(value => assert(value).eq(`0147 147 14 1 14 14 04 4 14 14 02 2 14 14 14th Monday Mon April Apr 04 4 4th 2014 PM pm ${getTimezoneOffset(am, '')} ${getTimezoneOffset(am)} GMT+1 1397477054 1397477054147`));
+      const value_ = `0147 147 14 1 14 14 04 4 14 14 02 2 14 14 14th Monday Mon April Apr 04 4 4th 2014 PM pm ${getTimezoneOffset(am, '')} ${getTimezoneOffset(am)} GMT+2 1397477054 1397477054147`;
+
+      values.forEach(value => assert(value).eq(value_));
     });
 
     to('value invalid', async () => {
