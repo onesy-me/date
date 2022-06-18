@@ -1,21 +1,14 @@
 /* tslint:disable: no-shadowed-variable */
 import { assert } from '@amaui/test';
 
-import { startBrowsers, IBrowsers, evaluate, closeBrowsers } from '../utils/js/test/utils';
+import { evaluate } from '../utils/js/test/utils';
 
 import { timezones } from '../src/timezones';
 
 group('@amaui/timezones', () => {
-  let browsers: IBrowsers;
-
-  pre(async () => browsers = await startBrowsers());
-
-  post(async () => {
-    await closeBrowsers(browsers);
-  });
 
   to('Europe/Belgrade', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.timezones.find((timezone: { label: string | string[]; }) => timezone.label.indexOf('Europe/Belgrade') > -1), { browsers });
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.timezones.find((timezone: { label: string | string[]; }) => timezone.label.indexOf('Europe/Belgrade') > -1),);
     const valueNode = timezones.find(timezone => timezone.label.indexOf('Europe/Belgrade') > -1);
     const values = [valueNode, ...valueBrowsers];
 

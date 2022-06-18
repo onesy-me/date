@@ -39,7 +39,7 @@
 
 <sup>AmauiDate <b>2.4kb gzipped</b></sup> <br />
 <sup>AmauiDate with all the methods <b>5.6kb gzipped</b></sup>  <br />
-<sup>AmauiDate with all the methods and all the timezones <b>21.6kb gzipped</b></sup>
+<sup>AmauiDate with all the methods and all the timezones <b>22kb gzipped</b></sup>
 
 ## Getting started
 
