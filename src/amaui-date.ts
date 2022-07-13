@@ -1,4 +1,11 @@
-import { is as is_, isExists, merge, copy, clamp, getStringVariables, setStringVariables, getLeadingZerosNumber, getOrdinalNumber } from '@amaui/utils';
+import { is as is_, isExists } from '@amaui/utils/is';
+import merge from '@amaui/utils/merge';
+import copy from '@amaui/utils/copy';
+import clamp from '@amaui/utils/clamp';
+import getStringVariables from '@amaui/utils/getStringVariables';
+import setStringVariables from '@amaui/utils/setStringVariables';
+import getLeadingZerosNumber from '@amaui/utils/getLeadingZerosNumber';
+import getOrdinalNumber from '@amaui/utils/getOrdinalNumber';
 import { timezones, ITimezone } from './timezones';
 
 interface IOptions {
