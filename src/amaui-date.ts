@@ -1,4 +1,5 @@
-import { is as is_, isExists } from '@amaui/utils/is';
+import is_ from '@amaui/utils/is';
+import isExists from '@amaui/utils/isExists';
 import merge from '@amaui/utils/merge';
 import copy from '@amaui/utils/copy';
 import clamp from '@amaui/utils/clamp';
