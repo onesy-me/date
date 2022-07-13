@@ -2977,3 +2977,5 @@ export const timezones: Array<ITimezone> = [
     abbr: '+14'
   }
 ];
+
+export default timezones;
