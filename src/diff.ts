@@ -17,4 +17,3 @@ export default function diff(value: AmauiDate, value1: AmauiDate, unit: TTimeUni
     return Math.abs(diffs[unit]);
   }
 }
-

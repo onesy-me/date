@@ -95,5 +95,4 @@ group('@amaui/date/add', () => {
     values.forEach(value => assert(value).eq(undefined));
   });
 
-
 });

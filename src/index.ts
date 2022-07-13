@@ -42,5 +42,3 @@ export { default as myTimezoneAbbr } from './myTimezoneAbbr';
 export { default as Timezones } from './timezones';
 
 export * from './timezones';
-
-
