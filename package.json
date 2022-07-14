@@ -1,6 +1,6 @@
 {
   "name": "@amaui/date",
-  "version": "1.0.11411",
+  "version": "1.0.11414",
   "description": "Time and date utils library",
   "repository": "https://github.com/amaui-org/amaui-date.git",
   "author": "Lazar <lazareric.com@gmail.com>",
@@ -39,7 +39,7 @@
     "test": "yarn lint && yarn type && yarn build && yarn test:pre && yarn cov && yarn test:post"
   },
   "dependencies": {
-    "@amaui/utils": "^1.0.11147",
+    "@amaui/utils": "^1.0.11411",
     "@babel/runtime": "^7.18.3"
   },
   "devDependencies": {
