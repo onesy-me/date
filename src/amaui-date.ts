@@ -62,13 +62,13 @@ export default class AmauiDate {
 
   public static get iso(): string { return new AmauiDate().iso; }
 
-  public static get amauidate(): AmauiDate { return new AmauiDate(); }
+  public static get amauiDate(): AmauiDate { return new AmauiDate(); }
 
   public static get local(): AmauiDate { return new AmauiDate().local; }
 
   constructor(
     public value_: string | number | AmauiDate | Date = new Date(),
-    public options: IOptions = optionsDefault
+    public options: IOptions = {}
   ) {
     this.init();
   }
@@ -82,7 +82,7 @@ export default class AmauiDate {
     if (is('number', this.value_) && String(this.value_).length === 10) (this.value_ as number) *= 1e3;
 
     // Make a date object from it
-    this.value = new Date(this.value_ instanceof AmauiDate ? this.value_.value : this.value_);
+    this.value = new Date(((this.value_ as AmauiDate).valid ? (this.value_ as AmauiDate).value : this.value_) as any);
 
     if (this.valid) {
       this.millisecond = this.value[this.options.utc ? 'getUTCMilliseconds' : 'getMilliseconds']();
@@ -104,6 +104,7 @@ export default class AmauiDate {
     const WEEK_MILLISECONDS = 604800000;
     const firstDayOfWeek = 1;
     const startOfYear = new Date(this.year, 0, 1);
+
     startOfYear.setDate(startOfYear.getDate() + (firstDayOfWeek - (startOfYear.getDay() % 7)));
 
     this.week = Math.round((Number(this.value) - Number(startOfYear)) / WEEK_MILLISECONDS) + 1;

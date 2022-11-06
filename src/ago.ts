@@ -1,16 +1,16 @@
 import AmauiDate, { units } from './amaui-date';
 
-export default function ago(amauidate: AmauiDate = AmauiDate.amauidate, withSufix: boolean = true): string {
+export default function ago(amauiDate: AmauiDate = AmauiDate.amauiDate, withSufix: boolean = true): string {
   const now = new AmauiDate();
 
   if (
-    amauidate.valid &&
-    amauidate.milliseconds < now.milliseconds
+    amauiDate.valid &&
+    amauiDate.milliseconds < now.milliseconds
   ) {
     let value = '';
 
     const ago_ = {
-      milliseconds: now.milliseconds - amauidate.milliseconds,
+      milliseconds: now.milliseconds - amauiDate.milliseconds,
     };
 
     ago_['second'] = Math.floor(ago_['milliseconds'] / 1e3);

@@ -5,14 +5,14 @@ import AmauiDate from './amaui-date';
 import formats from './formats';
 
 // ISO as a default format value string
-export default function format(amauidate: AmauiDate = AmauiDate.amauidate, value_: string = `YYYY-MM-DDTHH:mm:ss`): string {
+export default function format(amauiDate: AmauiDate = AmauiDate.amauiDate, value_: string = `YYYY-MM-DDTHH:mm:ss`): string {
   if (
-    amauidate &&
-    amauidate.valid
+    amauiDate &&
+    amauiDate.valid
   ) {
     let value = value_;
 
-    const formatValues = formats(amauidate);
+    const formatValues = formats(amauiDate);
     const abrs = formatValues.map(item => item.abr);
 
     // Extract and save all words quoted with: '', "", ``, {} or [],

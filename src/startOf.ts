@@ -1,23 +1,25 @@
 import AmauiDate, { TTimeUnits } from './amaui-date';
 
-export default function startOf(amauidate: AmauiDate = AmauiDate.amauidate, unit: TTimeUnits = 'day'): AmauiDate {
+export default function startOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'day'): AmauiDate {
   if (
-    amauidate &&
-    amauidate.valid
+    amauiDate_ &&
+    amauiDate_.valid
   ) {
+    const amauiDate = new AmauiDate(amauiDate_);
+
     switch (unit) {
       case 'second':
-        return new AmauiDate(amauidate.value.setMilliseconds(0));
+        return new AmauiDate(amauiDate.value.setMilliseconds(0));
       case 'minute':
-        return new AmauiDate(amauidate.value.setSeconds(0, 0));
+        return new AmauiDate(amauiDate.value.setSeconds(0, 0));
       case 'hour':
-        return new AmauiDate(amauidate.value.setMinutes(0, 0, 0));
+        return new AmauiDate(amauiDate.value.setMinutes(0, 0, 0));
       case 'day':
-        return new AmauiDate(amauidate.value.setHours(0, 0, 0, 0));
+        return new AmauiDate(amauiDate.value.setHours(0, 0, 0, 0));
       case 'month':
-        return new AmauiDate(new Date(amauidate.value.setDate(1)).setHours(0, 0, 0, 0));
+        return new AmauiDate(new Date(amauiDate.value.setDate(1)).setHours(0, 0, 0, 0));
       case 'year':
-        return new AmauiDate(new Date(amauidate.value.setMonth(0, 1)).setHours(0, 0, 0, 0));
+        return new AmauiDate(new Date(amauiDate.value.setMonth(0, 1)).setHours(0, 0, 0, 0));
       default:
         break;
     }

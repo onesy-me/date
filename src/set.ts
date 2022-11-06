@@ -3,34 +3,36 @@ import clamp from '@amaui/utils/clamp';
 import AmauiDate, { TTimeUnits } from './amaui-date';
 import add from './add';
 
-export default function set(value: number, unit: TTimeUnits, amauidate: AmauiDate = AmauiDate.amauidate): AmauiDate {
+export default function set(value: number, unit: TTimeUnits, amauiDate_: AmauiDate = AmauiDate.amauiDate): AmauiDate {
   if (
-    amauidate &&
-    amauidate.valid
+    amauiDate_ &&
+    amauiDate_.valid
   ) {
+    const amauiDate = new AmauiDate(amauiDate_);
+
     switch (unit) {
       case 'millisecond':
-        return new AmauiDate(amauidate.value.setMilliseconds(value));
+        return new AmauiDate(amauiDate.value.setMilliseconds(value));
       case 'milliseconds':
         return new AmauiDate(value);
       case 'second':
-        return new AmauiDate(amauidate.value.setSeconds(value));
+        return new AmauiDate(amauiDate.value.setSeconds(value));
       case 'minute':
-        return new AmauiDate(amauidate.value.setMinutes(value));
+        return new AmauiDate(amauiDate.value.setMinutes(value));
       case 'hour':
-        return new AmauiDate(amauidate.value.setHours(value));
+        return new AmauiDate(amauiDate.value.setHours(value));
       case 'day':
-        return new AmauiDate(amauidate.value.setDate(clamp(value, 0, 31)));
+        return new AmauiDate(amauiDate.value.setDate(clamp(value, 0, 31)));
       case 'dayWeek':
-        return add(clamp(value, 0, 6) - amauidate.dayWeek, 'day', amauidate);
+        return add(clamp(value, 0, 6) - amauiDate.dayWeek, 'day', amauiDate);
       case 'dayYear':
-        return add(clamp(value, 0, 366) - amauidate.dayYear, 'day', amauidate);
+        return add(clamp(value, 0, 366) - amauiDate.dayYear, 'day', amauiDate);
       case 'week':
-        return add(value - amauidate.week, 'week', amauidate);
+        return add(value - amauiDate.week, 'week', amauiDate);
       case 'month':
-        return new AmauiDate(amauidate.value.setMonth(value));
+        return new AmauiDate(amauiDate.value.setMonth(value));
       case 'year':
-        return new AmauiDate(amauidate.value.setFullYear(value));
+        return new AmauiDate(amauiDate.value.setFullYear(value));
       default:
         break;
     }

@@ -4,10 +4,8 @@ export default function diff(value: AmauiDate, value1: AmauiDate, unit: TTimeUni
   if (
     value &&
     value.valid &&
-    value instanceof AmauiDate &&
 
     value1 &&
-    value1 instanceof AmauiDate &&
     value1.valid
   ) {
     const diffs = {};

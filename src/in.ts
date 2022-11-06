@@ -1,6 +1,6 @@
 import AmauiDate, { units } from './amaui-date';
 
-export default function In(to: AmauiDate = AmauiDate.amauidate, withPrefix: boolean = true, from: AmauiDate = AmauiDate.amauidate): string {
+export default function In(to: AmauiDate = AmauiDate.amauiDate, withPrefix: boolean = true, from: AmauiDate = AmauiDate.amauiDate): string {
   if (
     to.valid &&
     from.valid &&

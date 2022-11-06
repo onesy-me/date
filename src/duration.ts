@@ -4,6 +4,7 @@ import clamp from '@amaui/utils/clamp';
 export default function duration(
   value: number,
   unitAbbr = false,
+  raw = false,
   separator = ' ',
   display = ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
 ) {
@@ -11,6 +12,7 @@ export default function duration(
     let result = '';
     let milliseconds = value;
     const values = [];
+    const valuesRaw = {};
 
     const millisecondsInA = {
       millisecond: 1,
@@ -39,6 +41,8 @@ export default function duration(
         if (value_ > 0) {
           milliseconds -= value_ * millisecondsInA[unit];
 
+          valuesRaw[unit] = value_;
+
           values.push(`${value_}${separator}${unitAbbr ? unitsAbbr[unit] : unit}${(value_ > 1 && !unitAbbr) ? 's' : ''}`);
         }
       }
@@ -46,6 +50,6 @@ export default function duration(
 
     values.forEach((value_: string) => result += ` ${value_}`);
 
-    return result.trim();
+    return raw ? valuesRaw : result.trim();
   }
 }

@@ -4,15 +4,13 @@ type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'hour' 
 
 type TIsQuery = 'before' | 'after' | 'same' | 'between' | 'before or same' | 'after or same' | 'leap-year' | 'leap-month';
 
-export default function is(value: AmauiDate = AmauiDate.amauidate, query: TIsQuery, value1: AmauiDate = AmauiDate.amauidate, unit: TTimeUnits = 'millisecond', value2: AmauiDate = AmauiDate.amauidate): boolean {
+export default function is(value: AmauiDate = AmauiDate.amauiDate, query: TIsQuery, value1: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'milliseconds', value2: AmauiDate = AmauiDate.amauiDate): boolean {
   if (
     value &&
-    value.valid &&
-    value instanceof AmauiDate
+    value.valid
   ) {
     if (
       value1 &&
-      value1 instanceof AmauiDate &&
       value1.valid
     ) {
       const diffs = {};
@@ -34,8 +32,7 @@ export default function is(value: AmauiDate = AmauiDate.amauidate, query: TIsQue
         case 'between':
           if (
             value2 &&
-            value2.valid &&
-            value2 instanceof AmauiDate
+            value2.valid
           ) {
             return (
               (is(value2, 'after or same', value) && is(value2, 'before or same', value1)) ||

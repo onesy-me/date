@@ -8,7 +8,7 @@ import { duration } from '../src';
 group('@amaui/date/duration', () => {
 
   to('duration', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140));
     const valueNode = duration(144444444140);
     const values = [valueNode, ...valueBrowsers];
 
@@ -16,7 +16,7 @@ group('@amaui/date/duration', () => {
   });
 
   to('unitAbr', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true));
     const valueNode = duration(144444444140, true);
     const values = [valueNode, ...valueBrowsers];
 
@@ -24,16 +24,16 @@ group('@amaui/date/duration', () => {
   });
 
   to('display', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, ' ', ['year', 'month']),);
-    const valueNode = duration(144444444140, true, ' ', ['year', 'month']);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ' ', ['year', 'month']),);
+    const valueNode = duration(144444444140, true, false, ' ', ['year', 'month']);
     const values = [valueNode, ...valueBrowsers];
 
     values.forEach(value => assert(value).eq('4 y 7 mo'));
   });
 
   to('separator', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, ''),);
-    const valueNode = duration(144444444140, true, '');
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ''),);
+    const valueNode = duration(144444444140, true, false, '');
     const values = [valueNode, ...valueBrowsers];
 
     values.forEach(value => assert(value).eq('4y 7mo 21d 19h 27m 24s 140ms'));
