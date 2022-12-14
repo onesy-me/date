@@ -25,15 +25,6 @@ export const monthsAbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'
 export const daysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 export const daysWeekAbr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-const isValidTimestamp = (value: any) => (
-  Number.isInteger(value) &&
-  String(value).length >= 10 &&
-  (
-    new Date(value).getTime() > 0 ||
-    new Date(value * 1000).getTime() > 0
-  )
-);
-
 export default class AmauiDate {
   public value: Date;
   public millisecond: number;
@@ -76,10 +67,6 @@ export default class AmauiDate {
   private init() {
     // Merge options with option defaults
     this.options = merge(this.options, optionsDefault);
-
-    // Convert seconds to milliseconds
-    // so it's valid in new Date as argument
-    if (is('number', this.value_) && String(this.value_).length === 10) (this.value_ as number) *= 1e3;
 
     // Make a date object from it
     this.value = new Date(((this.value_ as AmauiDate).valid ? (this.value_ as AmauiDate).value : this.value_) as any);
@@ -129,7 +116,7 @@ export default class AmauiDate {
   }
 
   public get valid(): boolean {
-    return this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || isValidTimestamp(new Date(this.value_).getTime());
+    return this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number';
   }
 
   public get local(): AmauiDate {
