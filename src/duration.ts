@@ -7,7 +7,7 @@ export default function duration(
   raw = false,
   separator = ' ',
   display = ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
-) {
+): string {
   if (is('number', value)) {
     let result = '';
     let milliseconds = value;
@@ -50,6 +50,6 @@ export default function duration(
 
     values.forEach((value_: string) => result += ` ${value_}`);
 
-    return raw ? valuesRaw : result.trim();
+    return (raw ? valuesRaw : result.trim()) as string;
   }
 }
