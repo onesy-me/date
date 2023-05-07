@@ -1,7 +1,7 @@
 import getStringVariables from '@amaui/utils/getStringVariables';
 import setStringVariables from '@amaui/utils/setStringVariables';
 
-import AmauiDate from './amaui-date';
+import AmauiDate from './AmauiDate';
 import formats from './formats';
 
 // ISO as a default format value string

@@ -1,4 +1,4 @@
-import AmauiDate, { TTimeUnits } from './amaui-date';
+import AmauiDate, { TTimeUnits } from './AmauiDate';
 import add from './add';
 
 export default function remove(value: number, unit: TTimeUnits, amauiDate: AmauiDate = AmauiDate.amauiDate): AmauiDate {

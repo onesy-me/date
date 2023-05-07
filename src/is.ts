@@ -1,4 +1,4 @@
-import AmauiDate, { units } from './amaui-date';
+import AmauiDate, { units } from './AmauiDate';
 
 type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'hour' | 'day' | 'dayWeek' | 'dayYear' | 'week' | 'month' | 'year';
 

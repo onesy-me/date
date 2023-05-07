@@ -1,4 +1,4 @@
-import AmauiDate, { units } from './amaui-date';
+import AmauiDate, { units } from './AmauiDate';
 
 export default function ago(amauiDate: AmauiDate = AmauiDate.amauiDate, withSufix: boolean = true): string {
   const now = new AmauiDate();

@@ -1,5 +1,5 @@
 import getLeadingZerosNumber from '@amaui/utils/getLeadingZerosNumber';
-import AmauiDate from './amaui-date';
+import AmauiDate from './AmauiDate';
 
 export default function getTimezoneOffset(value: AmauiDate = new AmauiDate(), divider = ':') {
   if (

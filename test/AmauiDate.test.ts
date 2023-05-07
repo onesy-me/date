@@ -5,7 +5,7 @@ import { evaluate } from '../utils/js/test/utils';
 
 import { AmauiDate, months, monthsAbr, daysWeek, daysWeekAbr, format } from '../src';
 
-group('@amaui/date/amaui-date', () => {
+group('@amaui/date/AmauiDate', () => {
 
   group('AmauiDate', () => {
 
@@ -89,7 +89,7 @@ group('@amaui/date/amaui-date', () => {
 
     to('amauidate', async () => {
       const valueBrowsers = await evaluate((window: any) => window.AmauiDate.AmauiDate.amauidate instanceof window.AmauiDate.AmauiDate,);
-      const valueNode = AmauiDate.amauidate instanceof AmauiDate;
+      const valueNode = AmauiDate.amauiDate instanceof AmauiDate;
       const values = [valueNode, ...valueBrowsers];
 
       values.forEach(value => assert(value).eq(true));

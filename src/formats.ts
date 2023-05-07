@@ -1,7 +1,7 @@
 import getLeadingZerosNumber from '@amaui/utils/getLeadingZerosNumber';
 import getOrdinalNumber from '@amaui/utils/getOrdinalNumber';
 
-import AmauiDate from './amaui-date';
+import AmauiDate from './AmauiDate';
 import getTimezoneOffset from './getTimezoneOffset';
 import myTimezoneAbbr from './myTimezoneAbbr';
 

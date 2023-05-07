@@ -1,6 +1,6 @@
 import { clamp } from '@amaui/utils';
 
-import AmauiDate, { TTimeUnits } from './amaui-date';
+import AmauiDate, { TTimeUnits } from './AmauiDate';
 import endOf from './endOf';
 
 export default function add(value: number, unit: TTimeUnits, amauiDate_: AmauiDate = AmauiDate.amauiDate): AmauiDate {

@@ -1,4 +1,4 @@
-import AmauiDate from './amaui-date';
+import AmauiDate from './AmauiDate';
 import myTimezone from './myTimezone';
 import myTimezoneAbbr from './myTimezoneAbbr';
 import { ITimezone } from './timezones';

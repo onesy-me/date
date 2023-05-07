@@ -1,4 +1,4 @@
-import AmauiDate, { TTimeUnits, units } from './amaui-date';
+import AmauiDate, { TTimeUnits, units } from './AmauiDate';
 
 export default function diff(value: AmauiDate, value1: AmauiDate, unit: TTimeUnits = 'millisecond'): number {
   if (

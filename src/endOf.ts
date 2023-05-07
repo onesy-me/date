@@ -1,4 +1,4 @@
-import AmauiDate, { TTimeUnits } from './amaui-date';
+import AmauiDate, { TTimeUnits } from './AmauiDate';
 
 export default function endOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'day'): AmauiDate {
   if (

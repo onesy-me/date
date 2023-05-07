@@ -1,4 +1,4 @@
-import AmauiDate, { units } from './amaui-date';
+import AmauiDate, { units } from './AmauiDate';
 
 export default function In(to: AmauiDate = AmauiDate.amauiDate, withPrefix: boolean = true, from: AmauiDate = AmauiDate.amauiDate): string {
   if (

@@ -1,14 +1,15 @@
-import is from '@amaui/utils/is';
 import merge from '@amaui/utils/merge';
+
+interface IOptionsOverrides {
+  months?: string[];
+  monthsAbr?: string[];
+  daysWeek?: string[];
+  daysWeekAbr?: string[];
+}
 
 interface IOptions {
   utc?: boolean;
-  overrides?: {
-    months?: string[];
-    monthsAbr?: string[];
-    daysWeek?: string[];
-    daysWeekAbr?: string[];
-  };
+  overrides?: IOptionsOverrides;
 }
 
 const optionsDefault: IOptions = {};
