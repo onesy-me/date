@@ -8,7 +8,7 @@ import { AmauiDate, getTimezoneOffset } from '../src';
 group('@amaui/date/getTimezoneOffset', () => {
 
   to('getTimezoneOffset', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset(),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset());
     const valueNode = getTimezoneOffset();
     const values = [valueNode, ...valueBrowsers];
 
@@ -16,7 +16,7 @@ group('@amaui/date/getTimezoneOffset', () => {
   });
 
   to('delimiter', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset(undefined, '.'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset(undefined, '.'));
     const valueNode = getTimezoneOffset(undefined, '.');
     const values = [valueNode, ...valueBrowsers];
 
@@ -41,7 +41,7 @@ group('@amaui/date/getTimezoneOffset', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset('🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset('🙂' as any));
     const valueNode = getTimezoneOffset('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

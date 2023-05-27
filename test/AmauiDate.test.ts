@@ -10,7 +10,7 @@ group('@amaui/date/AmauiDate', () => {
   group('AmauiDate', () => {
 
     to('utc', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.AmauiDate.utc).slice(0, 17),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.AmauiDate.utc).slice(0, 17));
       const valueNode = format(AmauiDate.utc).slice(0, 17);
       const values = [valueNode, ...valueBrowsers];
 
@@ -80,7 +80,7 @@ group('@amaui/date/AmauiDate', () => {
     });
 
     to('milliseconds', async () => {
-      const valueBrowsers = await evaluate((window: any) => Math.round(window.AmauiDate.AmauiDate.milliseconds / 1e3) === Math.round(new Date().getTime() / 1e3),);
+      const valueBrowsers = await evaluate((window: any) => Math.round(window.AmauiDate.AmauiDate.milliseconds / 1e3) === Math.round(new Date().getTime() / 1e3));
       const valueNode = Math.round(AmauiDate.milliseconds / 1e3) === Math.round(new Date().getTime() / 1e3);
       const values = [valueNode, ...valueBrowsers];
 
@@ -96,7 +96,7 @@ group('@amaui/date/AmauiDate', () => {
     });
 
     to('local', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.AmauiDate.local).slice(0, 14),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.AmauiDate.local).slice(0, 14));
       const valueNode = format(AmauiDate.local).slice(0, 14);
       const values = [valueNode, ...valueBrowsers];
 
@@ -106,7 +106,7 @@ group('@amaui/date/AmauiDate', () => {
     });
 
     to('iso', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.AmauiDate.iso.slice(0, 15),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.AmauiDate.iso.slice(0, 15));
       const valueNode = AmauiDate.iso.slice(0, 15);
       const values = [valueNode, ...valueBrowsers];
 
@@ -503,7 +503,7 @@ group('@amaui/date/AmauiDate', () => {
     });
 
     to('utc', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate().utc).slice(0, 17),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate().utc).slice(0, 17));
       const valueNode = format(new AmauiDate().utc).slice(0, 17);
       const values = [valueNode, ...valueBrowsers];
 
@@ -513,7 +513,7 @@ group('@amaui/date/AmauiDate', () => {
     to('local', async () => {
       const am = new AmauiDate();
 
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate().local).slice(0, 14),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate().local).slice(0, 14));
       const valueNode = format(am.local).slice(0, 14);
       const values = [valueNode, ...valueBrowsers];
 
@@ -523,7 +523,7 @@ group('@amaui/date/AmauiDate', () => {
     });
 
     to('iso', async () => {
-      const valueBrowsers = await evaluate((window: any) => new window.AmauiDate.AmauiDate().iso.slice(0, 15),);
+      const valueBrowsers = await evaluate((window: any) => new window.AmauiDate.AmauiDate().iso.slice(0, 15));
       const valueNode = new AmauiDate().iso.slice(0, 15);
       const values = [valueNode, ...valueBrowsers];
 

@@ -10,7 +10,7 @@ group('@amaui/date/startOf', () => {
   to('second', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'second')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'second')));
     const valueNode = format(startOf(am, 'second'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -20,7 +20,7 @@ group('@amaui/date/startOf', () => {
   to('minute', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'minute')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'minute')));
     const valueNode = format(startOf(am, 'minute'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -30,7 +30,7 @@ group('@amaui/date/startOf', () => {
   to('hour', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'hour')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'hour')));
     const valueNode = format(startOf(am, 'hour'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -40,7 +40,7 @@ group('@amaui/date/startOf', () => {
   to('day', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'day')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'day')));
     const valueNode = format(startOf(am, 'day'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -50,7 +50,7 @@ group('@amaui/date/startOf', () => {
   to('month', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'month')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'month')));
     const valueNode = format(startOf(am, 'month'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -60,7 +60,7 @@ group('@amaui/date/startOf', () => {
   to('year', async () => {
     const am = new AmauiDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'year')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.startOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'year')));
     const valueNode = format(startOf(am, 'year'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -68,7 +68,7 @@ group('@amaui/date/startOf', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.startOf('🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.startOf('🙂' as any));
     const valueNode = startOf('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

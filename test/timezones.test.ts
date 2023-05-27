@@ -8,7 +8,7 @@ import { timezones } from '../src/timezones';
 group('@amaui/timezones', () => {
 
   to('Europe/Belgrade', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.timezones.find((timezone: { label: string | string[]; }) => timezone.label.indexOf('Europe/Belgrade') > -1),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.timezones.find((timezone: { label: string | string[]; }) => timezone.label.indexOf('Europe/Belgrade') > -1));
     const valueNode = timezones.find(timezone => timezone.label.indexOf('Europe/Belgrade') > -1);
     const values = [valueNode, ...valueBrowsers];
 

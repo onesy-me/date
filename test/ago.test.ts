@@ -10,7 +10,7 @@ group('@amaui/date/ago', () => {
   to('second 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -20,7 +20,7 @@ group('@amaui/date/ago', () => {
   to('second 44', async () => {
     const am = new AmauiDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -33,7 +33,7 @@ group('@amaui/date/ago', () => {
   to('second 44 with sufix', async () => {
     const am = new AmauiDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), true),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), true));
     const valueNode = ago(am, true);
     const values = [valueNode, ...valueBrowsers];
 
@@ -43,7 +43,7 @@ group('@amaui/date/ago', () => {
   to('second 44 without sufix', async () => {
     const am = new AmauiDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), false),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), false));
     const valueNode = ago(am, false);
     const values = [valueNode, ...valueBrowsers];
 
@@ -53,7 +53,7 @@ group('@amaui/date/ago', () => {
   to('minute 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (1 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -63,7 +63,7 @@ group('@amaui/date/ago', () => {
   to('minute 4', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -73,7 +73,7 @@ group('@amaui/date/ago', () => {
   to('hour 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (1 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -83,7 +83,7 @@ group('@amaui/date/ago', () => {
   to('hour 4', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -93,7 +93,7 @@ group('@amaui/date/ago', () => {
   to('day 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -103,7 +103,7 @@ group('@amaui/date/ago', () => {
   to('day 4', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -113,7 +113,7 @@ group('@amaui/date/ago', () => {
   to('month 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -123,7 +123,7 @@ group('@amaui/date/ago', () => {
   to('month 4', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -133,7 +133,7 @@ group('@amaui/date/ago', () => {
   to('year 1', async () => {
     const am = new AmauiDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -143,7 +143,7 @@ group('@amaui/date/ago', () => {
   to('year 4', async () => {
     const am = new AmauiDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -151,7 +151,7 @@ group('@amaui/date/ago', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago('🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago('🙂' as any));
     const valueNode = ago('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

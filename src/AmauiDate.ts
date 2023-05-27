@@ -88,7 +88,7 @@ export default class AmauiDate {
     }
   }
 
-  public weekValue(): number {
+  private weekValue(): number {
     const WEEK_MILLISECONDS = 604800000;
     const firstDayOfWeek = 1;
     const startOfYear = new Date(this.year, 0, 1);

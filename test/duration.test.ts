@@ -24,7 +24,7 @@ group('@amaui/date/duration', () => {
   });
 
   to('display', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ' ', ['year', 'month']),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ' ', ['year', 'month']));
     const valueNode = duration(144444444140, true, false, ' ', ['year', 'month']);
     const values = [valueNode, ...valueBrowsers];
 
@@ -32,7 +32,7 @@ group('@amaui/date/duration', () => {
   });
 
   to('separator', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ''),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.duration(144444444140, true, false, ''));
     const valueNode = duration(144444444140, true, false, '');
     const values = [valueNode, ...valueBrowsers];
 

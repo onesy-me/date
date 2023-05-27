@@ -7,9 +7,9 @@ import { AmauiDate, my } from '../src';
 
 group('@amaui/date/my', () => {
 
-  to('amauidate', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.my().amauidate instanceof window.AmauiDate.AmauiDate,);
-    const valueNode = my().amauidate instanceof AmauiDate;
+  to('amauiDate', async () => {
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.my().amauiDate instanceof window.AmauiDate.AmauiDate,);
+    const valueNode = my().amauiDate instanceof AmauiDate;
     const values = [valueNode, ...valueBrowsers];
 
     values.forEach(value => assert(value).eq(true));

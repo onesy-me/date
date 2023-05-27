@@ -8,7 +8,7 @@ import { AmauiDate, is } from '../src';
 group('@amaui/date/is', () => {
 
   to('before', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), 'before', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), 'before', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')));
     const valueNode = is(new AmauiDate('2014-04-14T14:04:14.144'), 'before', new AmauiDate('2014-04-14T14:04:14.147'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -16,7 +16,7 @@ group('@amaui/date/is', () => {
   });
 
   to('before or same', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')));
     const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T14:04:14.147'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -24,7 +24,7 @@ group('@amaui/date/is', () => {
   });
 
   to('same', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')));
     const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'same', new AmauiDate('2014-04-14T14:04:14.147'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -49,7 +49,7 @@ group('@amaui/date/is', () => {
   });
 
   to('after or same', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'after or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'after or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147')));
     const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'after or same', new AmauiDate('2014-04-14T14:04:14.147'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -57,7 +57,7 @@ group('@amaui/date/is', () => {
   });
 
   to('after', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'after', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'after', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144')));
     const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'after', new AmauiDate('2014-04-14T14:04:14.144'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -102,7 +102,7 @@ group('@amaui/date/is', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is('🙂' as any, 'after', '🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is('🙂' as any, 'after', '🙂' as any));
     const valueNode = is('🙂' as any, 'after', '🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 
@@ -112,7 +112,7 @@ group('@amaui/date/is', () => {
   group('units', () => {
 
     to('millisecond', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.140'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'millisecond'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.140'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'millisecond'));
       const valueNode = is(new AmauiDate('2014-04-14T14:04:14.140'), 'before or same', new AmauiDate('2014-04-14T14:04:14.147'), 'millisecond');
       const values = [valueNode, ...valueBrowsers];
 
@@ -120,7 +120,7 @@ group('@amaui/date/is', () => {
     });
 
     to('second', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:41.147'), 'second'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:41.147'), 'second'));
       const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T14:04:41.147'), 'second');
       const values = [valueNode, ...valueBrowsers];
 
@@ -128,7 +128,7 @@ group('@amaui/date/is', () => {
     });
 
     to('minute', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:14:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:41:14.147'), 'minute'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:14:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:41:14.147'), 'minute'));
       const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T14:41:14.147'), 'minute');
       const values = [valueNode, ...valueBrowsers];
 
@@ -136,7 +136,7 @@ group('@amaui/date/is', () => {
     });
 
     to('hour', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T15:04:14.147'), 'hour'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T15:04:14.147'), 'hour'));
       const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T15:04:14.147'), 'hour');
       const values = [valueNode, ...valueBrowsers];
 
@@ -144,7 +144,7 @@ group('@amaui/date/is', () => {
     });
 
     to('day', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-04T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'day'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-04T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'day'));
       const valueNode = is(new AmauiDate('2014-04-04T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T14:04:14.147'), 'day');
       const values = [valueNode, ...valueBrowsers];
 
@@ -152,7 +152,7 @@ group('@amaui/date/is', () => {
     });
 
     to('month', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-01-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'month'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-01-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'month'));
       const valueNode = is(new AmauiDate('2014-01-14T14:04:14.147'), 'before or same', new AmauiDate('2014-04-14T14:04:14.147'), 'month');
       const values = [valueNode, ...valueBrowsers];
 
@@ -160,7 +160,7 @@ group('@amaui/date/is', () => {
     });
 
     to('year', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2041-04-14T14:04:14.147'), 'year'),);
+      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.is(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new window.AmauiDate.AmauiDate('2041-04-14T14:04:14.147'), 'year'));
       const valueNode = is(new AmauiDate('2014-04-14T14:04:14.147'), 'before or same', new AmauiDate('2041-04-14T14:04:14.147'), 'year');
       const values = [valueNode, ...valueBrowsers];
 

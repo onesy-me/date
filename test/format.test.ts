@@ -10,7 +10,7 @@ group('@amaui/date/format', () => {
   const monday = new AmauiDate('2014-04-14T14:04:14.147');
 
   to('words', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), `'a' DD "a" MM \`a\` YYYY {a} [a]`),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), `'a' DD "a" MM \`a\` YYYY {a} [a]`));
     const valueNode = format(monday, `'a' DD "a" MM \`a\` YYYY {a} [a]`);
     const values = [valueNode, ...valueBrowsers];
 
@@ -40,7 +40,7 @@ group('@amaui/date/format', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format('🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format('🙂' as any));
     const valueNode = format('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

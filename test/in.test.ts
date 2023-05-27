@@ -10,7 +10,7 @@ group('@amaui/date/in', () => {
   to('second 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -20,7 +20,7 @@ group('@amaui/date/in', () => {
   to('second 44', async () => {
     const am = new AmauiDate(new Date().getTime() + (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -30,7 +30,7 @@ group('@amaui/date/in', () => {
   to('second 44 with prefix', async () => {
     const am = new AmauiDate(new Date().getTime() + (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000)), true),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000)), true));
     const valueNode = In(am, true);
     const values = [valueNode, ...valueBrowsers];
 
@@ -40,7 +40,7 @@ group('@amaui/date/in', () => {
   to('second 44 without prefix', async () => {
     const am = new AmauiDate(new Date().getTime() + (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000)), false),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (44 * 1000)), false));
     const valueNode = In(am, false);
     const values = [valueNode, ...valueBrowsers];
 
@@ -50,7 +50,7 @@ group('@amaui/date/in', () => {
   to('minute 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (1 * 64 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 64 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 64 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -60,7 +60,7 @@ group('@amaui/date/in', () => {
   to('minute 4', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -70,7 +70,7 @@ group('@amaui/date/in', () => {
   to('hour 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (1 * 60 * 64 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 60 * 64 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 60 * 64 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -80,7 +80,7 @@ group('@amaui/date/in', () => {
   to('hour 4', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -90,7 +90,7 @@ group('@amaui/date/in', () => {
   to('day 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (1 * 25 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 25 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 25 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -100,7 +100,7 @@ group('@amaui/date/in', () => {
   to('day 4', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 25 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 25 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 25 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -110,7 +110,7 @@ group('@amaui/date/in', () => {
   to('month 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (1 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -120,7 +120,7 @@ group('@amaui/date/in', () => {
   to('month 4', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -130,7 +130,7 @@ group('@amaui/date/in', () => {
   to('year 1', async () => {
     const am = new AmauiDate(new Date().getTime() + (1 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 12 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (1 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -140,7 +140,7 @@ group('@amaui/date/in', () => {
   to('year 4', async () => {
     const am = new AmauiDate(new Date().getTime() + (4 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 12 * 31 * 24 * 60 * 60 * 1000))),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate(new Date().getTime() + (4 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = In(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -148,7 +148,7 @@ group('@amaui/date/in', () => {
   });
 
   to('from', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), true, new window.AmauiDate.AmauiDate('2014-04-10T14:04:14.144')),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), true, new window.AmauiDate.AmauiDate('2014-04-10T14:04:14.144')));
     const valueNode = In(new AmauiDate('2014-04-14T14:04:14.144'), true, new AmauiDate('2014-04-10T14:04:14.144'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -156,7 +156,7 @@ group('@amaui/date/in', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In('🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.In('🙂' as any));
     const valueNode = In('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

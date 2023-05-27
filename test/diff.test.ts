@@ -8,7 +8,7 @@ import { AmauiDate, diff } from '../src';
 group('@amaui/date/diff', () => {
 
   to('millisecond', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.143'), new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), 'millisecond'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.143'), new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.144'), 'millisecond'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.144'), new AmauiDate('2014-04-14T14:04:14.143'), 'millisecond');
     const values = [valueNode, ...valueBrowsers];
 
@@ -16,7 +16,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('second', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 14:04:13'), 'second'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 14:04:13'), 'second'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('04/14/2014 14:04:13'), 'second');
     const values = [valueNode, ...valueBrowsers];
 
@@ -24,7 +24,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('minute', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 14:03:14'), 'minute'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 14:03:14'), 'minute'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('04/14/2014 14:03:14'), 'minute');
     const values = [valueNode, ...valueBrowsers];
 
@@ -32,7 +32,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('hour', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 13:04:14'), 'hour'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2014 13:04:14'), 'hour'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('04/14/2014 13:04:14'), 'hour');
     const values = [valueNode, ...valueBrowsers];
 
@@ -40,7 +40,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('day', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/13/2014 14:04:14'), 'day'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/13/2014 14:04:14'), 'day'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('04/13/2014 14:04:14'), 'day');
     const values = [valueNode, ...valueBrowsers];
 
@@ -48,7 +48,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('month', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('03/14/2014 14:04:14'), 'month'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('03/14/2014 14:04:14'), 'month'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('03/14/2014 14:04:14'), 'month');
     const values = [valueNode, ...valueBrowsers];
 
@@ -56,7 +56,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('year', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2013 14:04:14'), 'year'),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), new window.AmauiDate.AmauiDate('04/14/2013 14:04:14'), 'year'));
     const valueNode = diff(new AmauiDate('2014-04-14T14:04:14.147'), new AmauiDate('04/14/2013 14:04:14'), 'year');
     const values = [valueNode, ...valueBrowsers];
 
@@ -64,7 +64,7 @@ group('@amaui/date/diff', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff('🙂' as any, '🙂' as any),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.diff('🙂' as any, '🙂' as any));
     const valueNode = diff('🙂' as any, '🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

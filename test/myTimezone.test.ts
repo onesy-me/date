@@ -8,7 +8,7 @@ import { myTimezone } from '../src';
 group('@amaui/date/myTimezone', () => {
 
   to('myTimezone', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.myTimezone(),);
+    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.myTimezone());
     const valueNode = myTimezone();
     const values = [valueNode, ...valueBrowsers];
 
