@@ -117,7 +117,7 @@ export default class AmauiDate {
   }
 
   public get valid(): boolean {
-    return this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number';
+    return (this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number') && !Number.isNaN(Math.floor(this.value?.getTime() / 1000));
   }
 
   public get local(): AmauiDate {
