@@ -1,4 +1,5 @@
 import AmauiDate, { TTimeUnits } from './AmauiDate';
+import remove from './remove';
 
 export default function startOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'day'): AmauiDate {
   if (
@@ -16,6 +17,8 @@ export default function startOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, uni
         return new AmauiDate(amauiDate.value.setMinutes(0, 0, 0));
       case 'day':
         return new AmauiDate(amauiDate.value.setHours(0, 0, 0, 0));
+      case 'week':
+        return startOf(remove(amauiDate.dayWeek - 1, 'day'), 'day');
       case 'month':
         return new AmauiDate(new Date(amauiDate.value.setDate(1)).setHours(0, 0, 0, 0));
       case 'year':
