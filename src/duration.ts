@@ -43,12 +43,12 @@ export default function duration(
 
           valuesRaw[unit] = value_;
 
-          values.push(`${value_}${separator}${unitAbbr ? unitsAbbr[unit] : unit}${(value_ > 1 && !unitAbbr) ? 's' : ''}`);
+          values.push(`${value_}${(value_ > 1 && !unitAbbr) ? 's' : ''}`);
         }
       }
     }
 
-    values.forEach((value_: string) => result += ` ${value_}`);
+    values.forEach((value_: string) => result += `${separator}${value_}`);
 
     return (raw ? valuesRaw : result.trim()) as string;
   }
