@@ -40,7 +40,7 @@ export default function formats(amauiDate: AmauiDate = AmauiDate.amauiDate): Arr
     // Month
     { abr: 'Mo', value: getOrdinalNumber(amauiDate.month) },
 
-    { abr: 'MMMM', value: amauiDate.months[amauiDate.month - 1 < 0 ? amauiDate.months.length - 1 : amauiDate.month - 1] },
+    { abr: 'MMMM', value: amauiDate.monthsNames[amauiDate.month - 1 < 0 ? amauiDate.monthsNames.length - 1 : amauiDate.month - 1] },
     { abr: 'MMM', value: amauiDate.monthsAbr[amauiDate.month - 1 < 0 ? amauiDate.monthsAbr.length - 1 : amauiDate.month - 1] },
     { abr: 'MM', value: getLeadingZerosNumber(amauiDate.month) },
     { abr: 'M', value: String(amauiDate.month) },

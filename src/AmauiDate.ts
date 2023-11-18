@@ -14,11 +14,11 @@ interface IOptions {
 
 const optionsDefault: IOptions = {};
 
-export type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'hour' | 'day' | 'dayWeek' | 'dayYear' | 'week' | 'month' | 'year';
+export type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'minutes' | 'hour' | 'hours' | 'day' | 'days' | 'dayWeek' | 'dayYear' | 'week' | 'weeks' | 'month' | 'months' | 'year';
 
 export type TIsQuery = 'before' | 'after' | 'same' | 'between' | 'before or same' | 'after or same' | 'leap-year' | 'leap-month';
 
-export const units = ['millisecond', 'milliseconds', 'second', 'minute', 'hour', 'day', 'month', 'year'];
+export const units = ['millisecond', 'milliseconds', 'second', 'minute', 'minutes', 'hour', 'hours', 'day', 'days', 'dayWeek', 'dayYear', 'week', 'weeks', 'month', 'months', 'year'];
 
 export const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 export const monthsAbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -32,12 +32,17 @@ export default class AmauiDate {
   public milliseconds: number;
   public second: number;
   public minute: number;
+  public minutes: number;
   public hour: number;
+  public hours: number;
   public day: number;
+  public days: number;
   public dayWeek: number;
   public dayYear: number;
   public week: number;
+  public weeks: number;
   public month: number;
+  public months: number;
   public year: number;
 
   public static get utc(): AmauiDate {
@@ -77,12 +82,17 @@ export default class AmauiDate {
       this.milliseconds = this.value.getTime();
       this.second = this.value[this.options.utc ? 'getUTCSeconds' : 'getSeconds']();
       this.minute = this.value[this.options.utc ? 'getUTCMinutes' : 'getMinutes']();
+      this.minutes = Math.floor(this.milliseconds / (1e3 * 60));
       this.hour = this.value[this.options.utc ? 'getUTCHours' : 'getHours']();
+      this.hours = Math.floor(this.milliseconds / (1e3 * 60 * 60));
       this.day = this.value[this.options.utc ? 'getUTCDate' : 'getDate']();
+      this.days = Math.floor(this.milliseconds / (1e3 * 60 * 60 * 24));
       this.dayWeek = this.value[this.options.utc ? 'getUTCDay' : 'getDay']();
+      this.weeks = Math.floor(this.milliseconds / (1e3 * 60 * 60 * 24 * 7));
       this.month = this.value[this.options.utc ? 'getUTCMonth' : 'getMonth']() + 1;
       this.year = this.value[this.options.utc ? 'getUTCFullYear' : 'getFullYear']();
       this.dayYear = Math.floor((this.milliseconds - Number(new Date(this.year, 0, 0))) / 1000 / 60 / 60 / 24);
+      this.months = ((this.year - 1970) * 12) - (12 - this.month);
 
       this.weekValue();
     }
@@ -100,7 +110,7 @@ export default class AmauiDate {
     return this.week;
   }
 
-  public get months(): string[] {
+  public get monthsNames(): string[] {
     return this.options.overrides?.months || months;
   }
 
