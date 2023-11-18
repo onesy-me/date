@@ -88,7 +88,8 @@ export default class AmauiDate {
       this.day = this.value[this.options.utc ? 'getUTCDate' : 'getDate']();
       this.days = Math.floor(this.milliseconds / (1e3 * 60 * 60 * 24));
       this.dayWeek = this.value[this.options.utc ? 'getUTCDay' : 'getDay']();
-      this.weeks = Math.floor(this.milliseconds / (1e3 * 60 * 60 * 24 * 7));
+      // https://stackoverflow.com/a/64293860 ty
+      this.weeks = Math.floor(((this.milliseconds / 1000) + 345600) / 604800);
       this.month = this.value[this.options.utc ? 'getUTCMonth' : 'getMonth']() + 1;
       this.year = this.value[this.options.utc ? 'getUTCFullYear' : 'getFullYear']();
       this.dayYear = Math.floor((this.milliseconds - Number(new Date(this.year, 0, 0))) / 1000 / 60 / 60 / 24);
