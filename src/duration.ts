@@ -14,14 +14,14 @@ export default function duration(
     const values = [];
     const valuesRaw = {};
 
-    const millisecondsInA = {
+    const millisecondsInTime = {
       millisecond: 1,
       second: 1e3,
       minute: 60 * 1e3,
       hour: 60 * 60 * 1e3,
       day: 24 * 60 * 60 * 1e3,
       month: 30 * 24 * 60 * 60 * 1e3,
-      year: 12 * 30 * 24 * 60 * 60 * 1e3,
+      year: 12 * 30 * 24 * 60 * 60 * 1e3
     };
 
     const unitsAbbr = {
@@ -31,19 +31,24 @@ export default function duration(
       hour: 'h',
       day: 'd',
       month: 'mo',
-      year: 'y',
+      year: 'y'
     };
 
     for (const unit of display) {
-      if (millisecondsInA[unit]) {
-        const value_ = clamp(Math.floor(milliseconds / millisecondsInA[unit]), 0);
+      if (millisecondsInTime[unit]) {
+        const value_ = clamp(Math.floor(milliseconds / millisecondsInTime[unit]), 0);
 
         if (value_ > 0) {
-          milliseconds -= value_ * millisecondsInA[unit];
+          milliseconds -= value_ * millisecondsInTime[unit];
 
           valuesRaw[unit] = value_;
 
-          values.push(`${value_}${(value_ > 1 && !unitAbbr) ? 's' : ''}`);
+          let valueTime: any = value_;
+
+          if (unitAbbr) valueTime = `${valueTime} ${unitsAbbr[unit]}`;
+          else valueTime = `${valueTime} ${unit}${value_ > 1 ? 's' : ''}`;
+
+          values.push(valueTime);
         }
       }
     }
