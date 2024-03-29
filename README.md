@@ -1,6 +1,6 @@
 
-</br >
-</br >
+</br>
+</br>
 
 <p align='center'>
   <a target='_blank' rel='noopener noreferrer' href='#'>
@@ -46,7 +46,7 @@
 ### Add
 
 ```sh
-  yarn add @amaui/date
+yarn add @amaui/date
 ```
 
 ### Use
@@ -75,13 +75,13 @@
 Install
 
 ```sh
-  yarn
+yarn
 ```
 
 Test
 
 ```sh
-  yarn test
+yarn test
 ```
 
 ### Prod
@@ -89,5 +89,5 @@ Test
 Build
 
 ```sh
-  yarn build
+yarn build
 ```
