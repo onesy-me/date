@@ -82,17 +82,17 @@ export default class AmauiDate {
       this.milliseconds = this.value.getTime();
       this.second = this.value[this.options.utc ? 'getUTCSeconds' : 'getSeconds']();
       this.minute = this.value[this.options.utc ? 'getUTCMinutes' : 'getMinutes']();
-      this.minutes = Math.floor(this.milliseconds / (1e3 * 60));
+      this.minutes = Math.ceil(this.milliseconds / (1e3 * 60));
       this.hour = this.value[this.options.utc ? 'getUTCHours' : 'getHours']();
-      this.hours = Math.floor(this.milliseconds / (1e3 * 60 * 60));
+      this.hours = Math.ceil(this.milliseconds / (1e3 * 60 * 60));
       this.day = this.value[this.options.utc ? 'getUTCDate' : 'getDate']();
-      this.days = Math.floor(this.milliseconds / (1e3 * 60 * 60 * 24));
+      this.days = Math.ceil(this.milliseconds / (1e3 * 60 * 60 * 24));
       this.dayWeek = this.value[this.options.utc ? 'getUTCDay' : 'getDay']();
       // https://stackoverflow.com/a/64293860 ty
-      this.weeks = Math.floor(((this.milliseconds / 1000) + 345600) / 604800);
+      this.weeks = Math.ceil(((this.milliseconds / 1000) + 345600) / 604800);
       this.month = this.value[this.options.utc ? 'getUTCMonth' : 'getMonth']() + 1;
       this.year = this.value[this.options.utc ? 'getUTCFullYear' : 'getFullYear']();
-      this.dayYear = Math.floor((this.milliseconds - Number(new Date(this.year, 0, 0))) / 1000 / 60 / 60 / 24);
+      this.dayYear = Math.ceil((this.milliseconds - Number(new Date(this.year, 0, 0))) / 1000 / 60 / 60 / 24);
       this.months = ((this.year - 1970) * 12) - (12 - this.month);
 
       this.weekValue();
@@ -128,7 +128,7 @@ export default class AmauiDate {
   }
 
   public get valid(): boolean {
-    return (this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number') && !Number.isNaN(Math.floor(this.value?.getTime() / 1000));
+    return (this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number') && !Number.isNaN(Math.ceil(this.value?.getTime() / 1000));
   }
 
   public get local(): AmauiDate {
