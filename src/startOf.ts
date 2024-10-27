@@ -18,7 +18,7 @@ export default function startOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, uni
       case 'day':
         return new AmauiDate(amauiDate.value.setHours(0, 0, 0, 0));
       case 'week':
-        return new AmauiDate(startOf(remove(amauiDate.dayWeek - 1, 'day', amauiDate), 'day'));
+        return new AmauiDate(startOf(remove((amauiDate.dayWeek === 0 ? 7 : amauiDate.dayWeek) - 1, 'day', amauiDate), 'day'));
       case 'month':
         return new AmauiDate(new Date(amauiDate.value.setDate(1)).setHours(0, 0, 0, 0));
       case 'year':

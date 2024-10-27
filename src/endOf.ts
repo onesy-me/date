@@ -32,7 +32,7 @@ export default function endOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, unit:
       case 'day':
         return new AmauiDate(amauiDate.value.setHours(23, 59, 59, 999));
       case 'week':
-        return new AmauiDate(endOf(add(7 - amauiDate.dayWeek, 'day', amauiDate), 'day'));
+        return new AmauiDate(endOf(add((amauiDate.dayWeek === 0 ? 0 : 7 - amauiDate.dayWeek), 'day', amauiDate), 'day'));
       case 'month':
         return new AmauiDate(new Date(amauiDate.value.setMonth(amauiDate.month, 0)).setHours(23, 59, 59, 999));
       case 'year':
