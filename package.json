@@ -2,7 +2,7 @@
   "name": "@onesy/date",
   "version": "1.0.0",
   "description": "Time and date utils library",
-  "repository": "https://github.com/onesy-org/onesy-date.git",
+  "repository": "https://github.com/onesy-me/date.git",
   "author": "Lazar <lazareric.com@gmail.com>",
   "license": "MIT",
   "private": false,
