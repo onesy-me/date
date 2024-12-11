@@ -1,38 +1,38 @@
-import clamp from '@amaui/utils/clamp';
+import clamp from '@onesy/utils/clamp';
 
-import AmauiDate, { TTimeUnits } from './AmauiDate';
+import OnesyDate, { TTimeUnits } from './OnesyDate';
 import add from './add';
 
-export default function set(value: number, unit: TTimeUnits, amauiDate_: AmauiDate = AmauiDate.amauiDate): AmauiDate {
+export default function set(value: number, unit: TTimeUnits, onesyDate_: OnesyDate = OnesyDate.onesyDate): OnesyDate {
   if (
-    amauiDate_ &&
-    amauiDate_.valid
+    onesyDate_ &&
+    onesyDate_.valid
   ) {
-    const amauiDate = new AmauiDate(amauiDate_);
+    const onesyDate = new OnesyDate(onesyDate_);
 
     switch (unit) {
       case 'millisecond':
-        return new AmauiDate(amauiDate.value.setMilliseconds(value));
+        return new OnesyDate(onesyDate.value.setMilliseconds(value));
       case 'milliseconds':
-        return new AmauiDate(value);
+        return new OnesyDate(value);
       case 'second':
-        return new AmauiDate(amauiDate.value.setSeconds(value));
+        return new OnesyDate(onesyDate.value.setSeconds(value));
       case 'minute':
-        return new AmauiDate(amauiDate.value.setMinutes(value));
+        return new OnesyDate(onesyDate.value.setMinutes(value));
       case 'hour':
-        return new AmauiDate(amauiDate.value.setHours(value));
+        return new OnesyDate(onesyDate.value.setHours(value));
       case 'day':
-        return new AmauiDate(amauiDate.value.setDate(clamp(value, 0, 31)));
+        return new OnesyDate(onesyDate.value.setDate(clamp(value, 0, 31)));
       case 'dayWeek':
-        return add(clamp(value, 0, 6) - amauiDate.dayWeek, 'day', amauiDate);
+        return add(clamp(value, 0, 6) - onesyDate.dayWeek, 'day', onesyDate);
       case 'dayYear':
-        return add(clamp(value, 0, 366) - amauiDate.dayYear, 'day', amauiDate);
+        return add(clamp(value, 0, 366) - onesyDate.dayYear, 'day', onesyDate);
       case 'week':
-        return add(value - amauiDate.week, 'week', amauiDate);
+        return add(value - onesyDate.week, 'week', onesyDate);
       case 'month':
-        return new AmauiDate(amauiDate.value.setMonth(value));
+        return new OnesyDate(onesyDate.value.setMonth(value));
       case 'year':
-        return new AmauiDate(amauiDate.value.setFullYear(value));
+        return new OnesyDate(onesyDate.value.setFullYear(value));
       default:
         break;
     }

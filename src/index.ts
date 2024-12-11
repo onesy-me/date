@@ -1,7 +1,7 @@
 
-export { default as AmauiDate } from './AmauiDate';
+export { default as OnesyDate } from './OnesyDate';
 
-export * from './AmauiDate';
+export * from './OnesyDate';
 
 export { default as add } from './add';
 

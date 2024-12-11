@@ -1,24 +1,24 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, format, max } from '../src';
+import { OnesyDate, format, max } from '../src';
 
-group('@amaui/date/max', () => {
+group('@onesy/date/max', () => {
 
   to('max', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.max([
-      new window.AmauiDate.AmauiDate('2014-04-14T14:04:14'),
-      new window.AmauiDate.AmauiDate('2014-04-17T14:04:14'),
-      new window.AmauiDate.AmauiDate('2014-04-14T14:40:14'),
-      new window.AmauiDate.AmauiDate('2014-04-14T14:41:14'),
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.max([
+      new window.OnesyDate.OnesyDate('2014-04-14T14:04:14'),
+      new window.OnesyDate.OnesyDate('2014-04-17T14:04:14'),
+      new window.OnesyDate.OnesyDate('2014-04-14T14:40:14'),
+      new window.OnesyDate.OnesyDate('2014-04-14T14:41:14'),
     ])));
     const valueNode = format(max([
-      new AmauiDate('2014-04-14T14:04:14'),
-      new AmauiDate('2014-04-17T14:04:14'),
-      new AmauiDate('2014-04-14T14:40:14'),
-      new AmauiDate('2014-04-14T14:41:14'),
+      new OnesyDate('2014-04-14T14:04:14'),
+      new OnesyDate('2014-04-17T14:04:14'),
+      new OnesyDate('2014-04-14T14:40:14'),
+      new OnesyDate('2014-04-14T14:41:14'),
     ]));
     const values = [valueNode, ...valueBrowsers];
 
@@ -26,7 +26,7 @@ group('@amaui/date/max', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.max([
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.max([
       '🙂' as any,
     ]));
     const valueNode = max([

@@ -1,5 +1,5 @@
-import isExists from '@amaui/utils/isExists';
-import copy from '@amaui/utils/copy';
+import isExists from '@onesy/utils/isExists';
+import copy from '@onesy/utils/copy';
 
 import timezones, { ITimezone } from './timezones';
 import getTimezoneOffset from './getTimezoneOffset';

@@ -1,16 +1,16 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, format, getTimezoneOffset } from '../src';
+import { OnesyDate, format, getTimezoneOffset } from '../src';
 
-group('@amaui/date/format', () => {
-  const sunday = new AmauiDate('2014-04-13T14:04:14.147');
-  const monday = new AmauiDate('2014-04-14T14:04:14.147');
+group('@onesy/date/format', () => {
+  const sunday = new OnesyDate('2014-04-13T14:04:14.147');
+  const monday = new OnesyDate('2014-04-14T14:04:14.147');
 
   to('words', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), `'a' DD "a" MM \`a\` YYYY {a} [a]`));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), `'a' DD "a" MM \`a\` YYYY {a} [a]`));
     const valueNode = format(monday, `'a' DD "a" MM \`a\` YYYY {a} [a]`);
     const values = [valueNode, ...valueBrowsers];
 
@@ -19,7 +19,7 @@ group('@amaui/date/format', () => {
 
   group('all format values', () => {
     to('Sunday', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate('2014-04-13T14:04:14.147'), `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`));
+      const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(new window.OnesyDate.OnesyDate('2014-04-13T14:04:14.147'), `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`));
       const valueNode = format(sunday, `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`);
       const values = [valueNode, ...valueBrowsers];
 
@@ -29,7 +29,7 @@ group('@amaui/date/format', () => {
     });
 
     to('Monday', async () => {
-      const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`));
+      const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`));
       const valueNode = format(monday, `SSSS SSS SS S ss s mm m HH H hh h DD D Do dd d MMMM MMM MM M Mo YYYY A a ZZ Z z X x`);
       const values = [valueNode, ...valueBrowsers];
 
@@ -40,7 +40,7 @@ group('@amaui/date/format', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format('🙂' as any));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format('🙂' as any));
     const valueNode = format('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

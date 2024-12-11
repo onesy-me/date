@@ -1,42 +1,42 @@
-import AmauiDate, { TTimeUnits } from './AmauiDate';
+import OnesyDate, { TTimeUnits } from './OnesyDate';
 
 // circular dependency issue fix
-function add(value: number, unit: TTimeUnits, amauiDate_: AmauiDate = AmauiDate.amauiDate): AmauiDate {
+function add(value: number, unit: TTimeUnits, onesyDate_: OnesyDate = OnesyDate.onesyDate): OnesyDate {
   if (
-    amauiDate_ &&
-    amauiDate_.valid
+    onesyDate_ &&
+    onesyDate_.valid
   ) {
-    const amauiDate = new AmauiDate(amauiDate_);
+    const onesyDate = new OnesyDate(onesyDate_);
 
     switch (unit) {
       case 'day':
-        return new AmauiDate(amauiDate.value.setDate(amauiDate.day + value));
+        return new OnesyDate(onesyDate.value.setDate(onesyDate.day + value));
     }
   }
 }
 
-export default function endOf(amauiDate_: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'day'): AmauiDate {
+export default function endOf(onesyDate_: OnesyDate = OnesyDate.onesyDate, unit: TTimeUnits = 'day'): OnesyDate {
   if (
-    amauiDate_ &&
-    amauiDate_.valid
+    onesyDate_ &&
+    onesyDate_.valid
   ) {
-    const amauiDate = new AmauiDate(amauiDate_);
+    const onesyDate = new OnesyDate(onesyDate_);
 
     switch (unit) {
       case 'second':
-        return new AmauiDate(amauiDate.value.setMilliseconds(999));
+        return new OnesyDate(onesyDate.value.setMilliseconds(999));
       case 'minute':
-        return new AmauiDate(amauiDate.value.setSeconds(59, 999));
+        return new OnesyDate(onesyDate.value.setSeconds(59, 999));
       case 'hour':
-        return new AmauiDate(amauiDate.value.setMinutes(59, 59, 999));
+        return new OnesyDate(onesyDate.value.setMinutes(59, 59, 999));
       case 'day':
-        return new AmauiDate(amauiDate.value.setHours(23, 59, 59, 999));
+        return new OnesyDate(onesyDate.value.setHours(23, 59, 59, 999));
       case 'week':
-        return new AmauiDate(endOf(add((amauiDate.dayWeek === 0 ? 0 : 7 - amauiDate.dayWeek), 'day', amauiDate), 'day'));
+        return new OnesyDate(endOf(add((onesyDate.dayWeek === 0 ? 0 : 7 - onesyDate.dayWeek), 'day', onesyDate), 'day'));
       case 'month':
-        return new AmauiDate(new Date(amauiDate.value.setMonth(amauiDate.month, 0)).setHours(23, 59, 59, 999));
+        return new OnesyDate(new Date(onesyDate.value.setMonth(onesyDate.month, 0)).setHours(23, 59, 59, 999));
       case 'year':
-        return new AmauiDate(new Date(amauiDate.value.setMonth(12, 0)).setHours(23, 59, 59, 999));
+        return new OnesyDate(new Date(onesyDate.value.setMonth(12, 0)).setHours(23, 59, 59, 999));
       default:
         break;
     }

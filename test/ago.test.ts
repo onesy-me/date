@@ -1,16 +1,16 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, ago } from '../src';
+import { OnesyDate, ago } from '../src';
 
-group('@amaui/date/ago', () => {
+group('@onesy/date/ago', () => {
 
   to('second 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -18,22 +18,22 @@ group('@amaui/date/ago', () => {
   });
 
   to('second 44', async () => {
-    const am = new AmauiDate(new Date().getTime() - (44 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (44 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
     // This second precision during testing might be either one of below
     // from time to time, depends on when tests are running but it's within truthy value
-    // for this specific AmauiDate method, and will be same for all the values below
+    // for this specific OnesyDate method, and will be same for all the values below
     values.forEach(value => assert(value).one.eq(['43 seconds ago', '44 seconds ago']));
   });
 
   to('second 44 with sufix', async () => {
-    const am = new AmauiDate(new Date().getTime() - (44 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), true));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (44 * 1000)), true));
     const valueNode = ago(am, true);
     const values = [valueNode, ...valueBrowsers];
 
@@ -41,9 +41,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('second 44 without sufix', async () => {
-    const am = new AmauiDate(new Date().getTime() - (44 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (44 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (44 * 1000)), false));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (44 * 1000)), false));
     const valueNode = ago(am, false);
     const values = [valueNode, ...valueBrowsers];
 
@@ -51,9 +51,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('minute 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (1 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (1 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (1 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -61,9 +61,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('minute 4', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -71,9 +71,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('hour 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (1 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (1 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (1 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -81,9 +81,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('hour 4', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -91,9 +91,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('day 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (1 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -101,9 +101,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('day 4', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -111,9 +111,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('month 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (1 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -121,9 +121,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('month 4', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -131,9 +131,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('year 1', async () => {
-    const am = new AmauiDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (1 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -141,9 +141,9 @@ group('@amaui/date/ago', () => {
   });
 
   to('year 4', async () => {
-    const am = new AmauiDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000));
+    const am = new OnesyDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000));
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago(new window.AmauiDate.AmauiDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000))));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago(new window.OnesyDate.OnesyDate(new Date().getTime() - (4 * 12 * 31 * 24 * 60 * 60 * 1000))));
     const valueNode = ago(am);
     const values = [valueNode, ...valueBrowsers];
 
@@ -151,7 +151,7 @@ group('@amaui/date/ago', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.ago('🙂' as any));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.ago('🙂' as any));
     const valueNode = ago('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

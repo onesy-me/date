@@ -1,4 +1,4 @@
-import merge from '@amaui/utils/merge';
+import merge from '@onesy/utils/merge';
 
 interface IOptionsOverrides {
   months?: string[];
@@ -26,7 +26,7 @@ export const monthsAbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'
 export const daysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 export const daysWeekAbr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-export default class AmauiDate {
+export default class OnesyDate {
   public value: Date;
   public millisecond: number;
   public milliseconds: number;
@@ -45,26 +45,26 @@ export default class AmauiDate {
   public months: number;
   public year: number;
 
-  public static get utc(): AmauiDate {
-    return new AmauiDate(new Date(), { utc: true });
+  public static get utc(): OnesyDate {
+    return new OnesyDate(new Date(), { utc: true });
   }
 
-  public static get daysInMonth(): number { return new AmauiDate().daysInMonth; }
+  public static get daysInMonth(): number { return new OnesyDate().daysInMonth; }
 
-  public static get valueOf(): number { return new AmauiDate().valueOf; }
+  public static get valueOf(): number { return new OnesyDate().valueOf; }
 
-  public static get unix(): number { return new AmauiDate().unix; }
+  public static get unix(): number { return new OnesyDate().unix; }
 
-  public static get milliseconds(): number { return new AmauiDate().milliseconds; }
+  public static get milliseconds(): number { return new OnesyDate().milliseconds; }
 
-  public static get iso(): string { return new AmauiDate().iso; }
+  public static get iso(): string { return new OnesyDate().iso; }
 
-  public static get amauiDate(): AmauiDate { return new AmauiDate(); }
+  public static get onesyDate(): OnesyDate { return new OnesyDate(); }
 
-  public static get local(): AmauiDate { return new AmauiDate().local; }
+  public static get local(): OnesyDate { return new OnesyDate().local; }
 
   constructor(
-    public value_: string | number | AmauiDate | Date = new Date(),
+    public value_: string | number | OnesyDate | Date = new Date(),
     public options: IOptions = {}
   ) {
     this.init();
@@ -75,7 +75,7 @@ export default class AmauiDate {
     this.options = merge(this.options, optionsDefault);
 
     // Make a date object from it
-    this.value = new Date(((this.value_ as AmauiDate).valid ? (this.value_ as AmauiDate).value : this.value_) as any);
+    this.value = new Date(((this.value_ as OnesyDate).valid ? (this.value_ as OnesyDate).value : this.value_) as any);
 
     if (this.valid) {
       this.millisecond = this.value[this.options.utc ? 'getUTCMilliseconds' : 'getMilliseconds']();
@@ -128,15 +128,15 @@ export default class AmauiDate {
   }
 
   public get valid(): boolean {
-    return (this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof AmauiDate || typeof this.value_ === 'number') && !Number.isNaN(Math.ceil(this.value?.getTime() / 1000));
+    return (this.value_ === undefined || this.value_ instanceof Date || this.value_ instanceof OnesyDate || typeof this.value_ === 'number') && !Number.isNaN(Math.ceil(this.value?.getTime() / 1000));
   }
 
-  public get local(): AmauiDate {
-    if (this.valid) return new AmauiDate(new Date(this.value.toLocaleString('en-us')));
+  public get local(): OnesyDate {
+    if (this.valid) return new OnesyDate(new Date(this.value.toLocaleString('en-us')));
   }
 
-  public get utc(): AmauiDate {
-    return new AmauiDate(this.value, { utc: true });
+  public get utc(): OnesyDate {
+    return new OnesyDate(this.value, { utc: true });
   }
 
   public get iso(): string {
@@ -162,7 +162,7 @@ export default class AmauiDate {
     if (this.valid) return Math.floor(this.value.getTime() / 1000);
   }
 
-  public timezone(value: string): AmauiDate {
-    if (this.valid && value) return new AmauiDate(this.value.toLocaleString('en-us', { timeZone: value }));
+  public timezone(value: string): OnesyDate {
+    if (this.valid && value) return new OnesyDate(this.value.toLocaleString('en-us', { timeZone: value }));
   }
 }

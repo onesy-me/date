@@ -1,6 +1,6 @@
-import AmauiDate, { TTimeUnits, units } from './AmauiDate';
+import OnesyDate, { TTimeUnits, units } from './OnesyDate';
 
-export default function diff(value: AmauiDate, value1: AmauiDate, unit: TTimeUnits = 'millisecond'): number {
+export default function diff(value: OnesyDate, value1: OnesyDate, unit: TTimeUnits = 'millisecond'): number {
   if (
     value &&
     value.valid &&

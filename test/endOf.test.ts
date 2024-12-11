@@ -1,16 +1,16 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, format, endOf } from '../src';
+import { OnesyDate, format, endOf } from '../src';
 
-group('@amaui/date/endOf', () => {
+group('@onesy/date/endOf', () => {
 
   to('second', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'second')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'second')));
     const valueNode = format(endOf(am, 'second'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -18,9 +18,9 @@ group('@amaui/date/endOf', () => {
   });
 
   to('minute', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'minute')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'minute')));
     const valueNode = format(endOf(am, 'minute'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -28,9 +28,9 @@ group('@amaui/date/endOf', () => {
   });
 
   to('hour', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'hour')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'hour')));
     const valueNode = format(endOf(am, 'hour'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -38,9 +38,9 @@ group('@amaui/date/endOf', () => {
   });
 
   to('day', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'day')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'day')));
     const valueNode = format(endOf(am, 'day'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -48,9 +48,9 @@ group('@amaui/date/endOf', () => {
   });
 
   to('month', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'month')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'month')));
     const valueNode = format(endOf(am, 'month'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -58,9 +58,9 @@ group('@amaui/date/endOf', () => {
   });
 
   to('year', async () => {
-    const am = new AmauiDate('2014-04-14T14:04:14.147');
+    const am = new OnesyDate('2014-04-14T14:04:14.147');
 
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.format(window.AmauiDate.endOf(new window.AmauiDate.AmauiDate('2014-04-14T14:04:14.147'), 'year')));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.format(window.OnesyDate.endOf(new window.OnesyDate.OnesyDate('2014-04-14T14:04:14.147'), 'year')));
     const valueNode = format(endOf(am, 'year'));
     const values = [valueNode, ...valueBrowsers];
 
@@ -68,7 +68,7 @@ group('@amaui/date/endOf', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.endOf('🙂' as any));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.endOf('🙂' as any));
     const valueNode = endOf('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

@@ -1,22 +1,22 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, my } from '../src';
+import { OnesyDate, my } from '../src';
 
-group('@amaui/date/my', () => {
+group('@onesy/date/my', () => {
 
-  to('amauiDate', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.my().amauiDate instanceof window.AmauiDate.AmauiDate,);
-    const valueNode = my().amauiDate instanceof AmauiDate;
+  to('onesyDate', async () => {
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.my().onesyDate instanceof window.OnesyDate.OnesyDate,);
+    const valueNode = my().onesyDate instanceof OnesyDate;
     const values = [valueNode, ...valueBrowsers];
 
     values.forEach(value => assert(value).eq(true));
   });
 
   to('timezone', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.my().timezone,);
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.my().timezone,);
     const valueNode = my().timezone;
     const values = [valueNode, ...valueBrowsers];
 

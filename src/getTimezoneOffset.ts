@@ -1,7 +1,7 @@
-import getLeadingZerosNumber from '@amaui/utils/getLeadingZerosNumber';
-import AmauiDate from './AmauiDate';
+import getLeadingZerosNumber from '@onesy/utils/getLeadingZerosNumber';
+import OnesyDate from './OnesyDate';
 
-export default function getTimezoneOffset(value: AmauiDate = new AmauiDate(), divider = ':') {
+export default function getTimezoneOffset(value: OnesyDate = new OnesyDate(), divider = ':') {
   if (
     value &&
     value.valid

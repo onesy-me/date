@@ -1,18 +1,18 @@
-import getStringVariables from '@amaui/utils/getStringVariables';
-import setStringVariables from '@amaui/utils/setStringVariables';
+import getStringVariables from '@onesy/utils/getStringVariables';
+import setStringVariables from '@onesy/utils/setStringVariables';
 
-import AmauiDate from './AmauiDate';
+import OnesyDate from './OnesyDate';
 import formats from './formats';
 
 // ISO as a default format value string
-export default function format(amauiDate: AmauiDate = AmauiDate.amauiDate, value_: string = `YYYY-MM-DDTHH:mm:ss`): string {
+export default function format(onesyDate: OnesyDate = OnesyDate.onesyDate, value_: string = `YYYY-MM-DDTHH:mm:ss`): string {
   if (
-    amauiDate &&
-    amauiDate.valid
+    onesyDate &&
+    onesyDate.valid
   ) {
     let value = value_;
 
-    const formatValues = formats(amauiDate);
+    const formatValues = formats(onesyDate);
     const abrs = formatValues.map(item => item.abr);
 
     // Extract and save all words quoted with: '', "", ``, {} or [],

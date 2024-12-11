@@ -1,10 +1,10 @@
-import AmauiDate, { units } from './AmauiDate';
+import OnesyDate, { units } from './OnesyDate';
 
 type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'hour' | 'day' | 'dayWeek' | 'dayYear' | 'week' | 'month' | 'year';
 
 type TIsQuery = 'before' | 'after' | 'same' | 'between' | 'before or same' | 'after or same' | 'leap-year' | 'leap-month';
 
-export default function is(value: AmauiDate = AmauiDate.amauiDate, query: TIsQuery, value1: AmauiDate = AmauiDate.amauiDate, unit: TTimeUnits = 'milliseconds', value2: AmauiDate = AmauiDate.amauiDate): boolean {
+export default function is(value: OnesyDate = OnesyDate.onesyDate, query: TIsQuery, value1: OnesyDate = OnesyDate.onesyDate, unit: TTimeUnits = 'milliseconds', value2: OnesyDate = OnesyDate.onesyDate): boolean {
   if (
     value &&
     value.valid

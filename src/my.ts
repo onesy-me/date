@@ -1,10 +1,10 @@
-import AmauiDate from './AmauiDate';
+import OnesyDate from './OnesyDate';
 import myTimezone from './myTimezone';
 import myTimezoneAbbr from './myTimezoneAbbr';
 import { ITimezone } from './timezones';
 
 interface IMy {
-  amauiDate: AmauiDate;
+  onesyDate: OnesyDate;
   timezone: ITimezone;
 }
 
@@ -13,10 +13,10 @@ export default function my(): IMy {
 
   timezone.abbr = myTimezoneAbbr();
 
-  const amauiDate = new AmauiDate();
+  const onesyDate = new OnesyDate();
 
   return {
-    amauiDate,
+    onesyDate,
     timezone,
   };
 }

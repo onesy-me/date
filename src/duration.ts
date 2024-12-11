@@ -1,5 +1,5 @@
-import is from '@amaui/utils/is';
-import clamp from '@amaui/utils/clamp';
+import is from '@onesy/utils/is';
+import clamp from '@onesy/utils/clamp';
 
 export default function duration(
   value: number,

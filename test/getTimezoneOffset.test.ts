@@ -1,14 +1,14 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
-import { AmauiDate, getTimezoneOffset } from '../src';
+import { OnesyDate, getTimezoneOffset } from '../src';
 
-group('@amaui/date/getTimezoneOffset', () => {
+group('@onesy/date/getTimezoneOffset', () => {
 
   to('getTimezoneOffset', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset());
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.getTimezoneOffset());
     const valueNode = getTimezoneOffset();
     const values = [valueNode, ...valueBrowsers];
 
@@ -16,7 +16,7 @@ group('@amaui/date/getTimezoneOffset', () => {
   });
 
   to('delimiter', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset(undefined, '.'));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.getTimezoneOffset(undefined, '.'));
     const valueNode = getTimezoneOffset(undefined, '.');
     const values = [valueNode, ...valueBrowsers];
 
@@ -25,12 +25,12 @@ group('@amaui/date/getTimezoneOffset', () => {
 
   to('Daylight Saving Time', async () => {
     const valueBrowsers = await evaluate((window: any) => [
-      window.AmauiDate.getTimezoneOffset(new window.AmauiDate.AmauiDate('January 1, 2021')),
-      window.AmauiDate.getTimezoneOffset(new window.AmauiDate.AmauiDate('May 1, 2021')),
+      window.OnesyDate.getTimezoneOffset(new window.OnesyDate.OnesyDate('January 1, 2021')),
+      window.OnesyDate.getTimezoneOffset(new window.OnesyDate.OnesyDate('May 1, 2021')),
     ]);
     const valueNode = [
-      getTimezoneOffset(new AmauiDate('January 1')),
-      getTimezoneOffset(new AmauiDate('May 1')),
+      getTimezoneOffset(new OnesyDate('January 1')),
+      getTimezoneOffset(new OnesyDate('May 1')),
     ];
     const values = [valueNode, ...valueBrowsers];
 
@@ -41,7 +41,7 @@ group('@amaui/date/getTimezoneOffset', () => {
   });
 
   to('value invalid', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.getTimezoneOffset('🙂' as any));
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.getTimezoneOffset('🙂' as any));
     const valueNode = getTimezoneOffset('🙂' as any);
     const values = [valueNode, ...valueBrowsers];
 

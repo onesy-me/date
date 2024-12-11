@@ -1,14 +1,14 @@
 /* tslint:disable: no-shadowed-variable */
-import { assert } from '@amaui/test';
+import { assert } from '@onesy/test';
 
 import { evaluate } from '../utils/js/test/utils';
 
 import { myTimezone } from '../src';
 
-group('@amaui/date/myTimezone', () => {
+group('@onesy/date/myTimezone', () => {
 
   to('myTimezone', async () => {
-    const valueBrowsers = await evaluate((window: any) => window.AmauiDate.myTimezone());
+    const valueBrowsers = await evaluate((window: any) => window.OnesyDate.myTimezone());
     const valueNode = myTimezone();
     const values = [valueNode, ...valueBrowsers];
 
