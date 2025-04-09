@@ -1,6 +1,6 @@
 {
   "name": "@onesy/date",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Time and date utils library",
   "repository": "https://github.com/onesy-me/date.git",
   "author": "Lazar <lazareric2@gmail.com>",
@@ -40,12 +40,10 @@
     "test": "yarn lint && yarn type && yarn build && yarn test:pre && yarn cov && yarn test:post"
   },
   "dependencies": {
-    "@onesy/utils": "^1.0.0",
-    "@babel/runtime": "^7.18.3"
+    "@babel/runtime": "^7.18.3",
+    "@onesy/utils": "^1.0.0"
   },
   "devDependencies": {
-    "@onesy/models": "^1.0.0",
-    "@onesy/test": "^1.0.0",
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
@@ -53,6 +51,8 @@
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
+    "@onesy/models": "^1.0.0",
+    "@onesy/test": "^1.0.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",

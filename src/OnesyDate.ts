@@ -14,16 +14,23 @@ interface IOptions {
 
 const optionsDefault: IOptions = {};
 
+// l('millisecond') | l('milliseconds') | l('second') | l('minute') | l('minutes') | l('hour') | l('hours') | l('day') | l('days') | l('week') | l('weeks') | l('month') | l('months') | l('year')
 export type TTimeUnits = 'millisecond' | 'milliseconds' | 'second' | 'minute' | 'minutes' | 'hour' | 'hours' | 'day' | 'days' | 'dayWeek' | 'dayYear' | 'week' | 'weeks' | 'month' | 'months' | 'year';
 
+// l('before') | l('after') | l('same') | l('between') | l('before or same') | l('after or same') | l('leap-year') | l('leap-month')
 export type TIsQuery = 'before' | 'after' | 'same' | 'between' | 'before or same' | 'after or same' | 'leap-year' | 'leap-month';
 
+// l('millisecond') l('milliseconds') l('second') l('minute') l('minutes') l('hour') l('hours') l('day') l('days') l('week') l('weeks') l('month') l('months') l('year')
 export const units = ['millisecond', 'milliseconds', 'second', 'minute', 'minutes', 'hour', 'hours', 'day', 'days', 'dayWeek', 'dayYear', 'week', 'weeks', 'month', 'months', 'year'];
 
+// l('January') l('February') l('March') l('April') l('May') l('June') l('July') l('August') l('September') l('October') l('November') l('December')
 export const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// l('Jan') l('Feb') l('Mar') l('Apr') l('May') l('Jun') l('Jul') l('Aug') l('Sep') l('Oct') l('Nov') l('Dec')
 export const monthsAbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+// l('Monday') l('Tuesday') l('Wednesday') l('Thursday') l('Friday') l('Saturday') l('Sunday')
 export const daysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+// l('Mon') l('Tue') l('Wed') l('Thu') l('Fri') l('Sat') l('Sun')
 export const daysWeekAbr = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export default class OnesyDate {

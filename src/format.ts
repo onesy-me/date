@@ -5,7 +5,12 @@ import OnesyDate from './OnesyDate';
 import formats from './formats';
 
 // ISO as a default format value string
-export default function format(onesyDate: OnesyDate = OnesyDate.onesyDate, value_: string = `YYYY-MM-DDTHH:mm:ss`): string {
+export type IOptionsFormat = {
+  l?: (...args: any[]) => any;
+};
+export default function format(onesyDate: OnesyDate = OnesyDate.onesyDate, value_: string = `YYYY-MM-DDTHH:mm:ss`, options?: IOptionsFormat): string {
+  const l = options?.l || (value => value);
+
   if (
     onesyDate &&
     onesyDate.valid
@@ -42,7 +47,7 @@ export default function format(onesyDate: OnesyDate = OnesyDate.onesyDate, value
     abrVariables.variables.forEach(variable => {
       const format_ = formatValues.find(item => item.abr === variable);
 
-      abrVariablesToValue.push({ key: variable, value: format_.value });
+      abrVariablesToValue.push({ key: variable, value: l(format_.value) });
     });
 
     // Replace abr variables with appropriate values

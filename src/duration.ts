@@ -1,13 +1,19 @@
 import is from '@onesy/utils/is';
 import clamp from '@onesy/utils/clamp';
+import { IOptionsFormat } from './format';
 
 export default function duration(
   value: number,
   unitAbbr = false,
   raw = false,
   separator = ' ',
-  display = ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond']
+  // l('year') l('month')  l('day')  l('hour')  l('minute')  l('second')  l('millisecond')
+  // l('years') l('months')  l('days')  l('hours')  l('minutes')  l('seconds')  l('milliseconds')
+  display = ['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond'],
+  options?: IOptionsFormat
 ): string {
+  const l = options?.l || (value => value);
+
   if (is('number', value)) {
     let result = '';
     let milliseconds = value;
@@ -45,8 +51,8 @@ export default function duration(
 
           let valueTime: any = value_;
 
-          if (unitAbbr) valueTime = `${valueTime} ${unitsAbbr[unit]}`;
-          else valueTime = `${valueTime} ${unit}${value_ > 1 ? 's' : ''}`;
+          if (unitAbbr) valueTime = `${valueTime} ${l(unitsAbbr[unit])}`;
+          else valueTime = `${valueTime} ${l(`${unit}${value_ > 1 ? 's' : ''}`)}`;
 
           values.push(valueTime);
         }
