@@ -35,8 +35,6 @@
 <sup>OnesyDate with all the methods <b>5.6kb gzipped</b></sup>  <br />
 <sup>OnesyDate with all the methods and all the timezones <b>22kb gzipped</b></sup>
 
-## Getting started
-
 ### Add
 
 ```sh
