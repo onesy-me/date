@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Time and date utils library",
   "repository": "https://github.com/onesy-me/date.git",
-  "author": "Lazar <lazareric2@gmail.com>",
+  "author": "Lazar Erić <lazareric1@proton.me>",
   "license": "MIT",
   "private": false,
   "main": "./src/index.ts",
